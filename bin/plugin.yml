@@ -1,0 +1,11 @@
+name: GuideNPC
+version: 1.0.0
+main: me.snykkk.guidenpc.GuideNPC
+author: Snykkk
+description: A plugin NPC guide
+softdepend: [Citizens, PlaceholderAPI]
+api-version: 1.13
+commands:
+    guide:
+      description: Blank description.
+      usage: /<command>

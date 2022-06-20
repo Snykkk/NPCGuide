@@ -1,0 +1,39 @@
+mysql:
+  host: "localhost"
+  port: 3306
+  database: "database"
+  table: "_guidenpc"
+  user: "root"
+  password: "password"
+
+messages:
+  prefix: "&f&lNPCGuide &8&l» &7"
+  guide_reset: "&aYour data has been deleted from the database, you can get instructions again."
+  guide_reset_all: "&aAll players' data is deleted from the database, they can get instructions again."
+  guide_reset_player: "&aThe %player_name% data is deleted from the database, he can get instructions again."
+  no_permission: "&cYou don't have permission to use that"
+  unknown_player: "&cPlayer not found!"
+  reload: "&aThe configuration has been reloaded!"
+  
+#The amount of seconds in between msgs and between the final msg and the command
+seconds_between_actions: 2
+
+guides:
+  '1': #This is NPC ID (/npc id)
+    messages:
+    - "&e[NPC] Leo&f: &fYou can unlock ..."
+    - "&e[NPC] Leo&f: &fThere is ..."
+    - "&e[NPC] Leo&f: &fTo check your ..."
+    messages-after:
+    - "&e[NPC] Leo&f: &fAlready talked ..."
+    message-sound: ENTITY_VILLAGER_YES
+    message-sound-after: ENTITY_VILLAGER_NO
+    effect: VILLAGER_HAPPY
+    effect-after: CRIT
+    display: ""
+    progress: true #If false this npc is not taken into account
+    commands:
+    - "console;reshop forceopen %player_name% farmer"
+    - "player;talkedcommand"
+    - "broadcast;%player_name% clicked to NPC"
+    - "message;Final command"
